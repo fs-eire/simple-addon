@@ -1,6 +1,7 @@
 # Files to compile
 file(GLOB SOURCE_FILES 
     "addon.cpp"
+    "platform/*.cpp"
     )
 
 # The addon name
@@ -27,7 +28,9 @@ set_target_properties(${TARGET_NAME} PROPERTIES
 target_include_directories(${TARGET_NAME} PRIVATE
      "D:\\eire\\prototype\\node\\src"
      "D:\\eire\\prototype\\node\\deps\\v8\\include"
+     "D:\\eire\\prototype\\node\\deps\\uv\\include"
     PUBLIC
+    ${PROJECT_SOURCE_DIR}/addon
     ${PROJECT_SOURCE_DIR}/inc)
 
 # Using the V8 functions exported from node.exe
